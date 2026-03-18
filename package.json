@@ -4,7 +4,6 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "ensure:alinea": "bash scripts/ensure-alinea.sh > /dev/null",
     "dev": "alinea dev -- next dev",
     "build": "alinea build -- next build",
     "start": "next start",
