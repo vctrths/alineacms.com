@@ -3,7 +3,6 @@
   "_type": "Page",
   "_index": "a1",
   "title": "About",
-  "path": "about",
   "blocks": [
     {
       "_id": "3Cstep5AboutText00000000001",
@@ -23,8 +22,8 @@
     }
   ],
   "metadata": {
-    "title": "",
-    "description": "",
+    "title": "Test",
+    "description": "Blabla",
     "openGraph": {
       "image": {},
       "title": "",

@@ -18,6 +18,7 @@ export default async function RootLayout({
         <SiteHeader settings={settings} />
         {children}
         <SiteFooter settings={settings} />
+        <cms.previews widget />
       </body>
     </html>
   )

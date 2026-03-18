@@ -1,8 +1,5 @@
-import type {TextDoc} from 'alinea'
 import {Entry} from 'alinea/core/Entry'
-import {Node} from 'alinea/core/TextDoc'
 import {RichText} from 'alinea/ui'
-import type {Metadata} from 'next'
 import Link from 'next/link'
 import {notFound} from 'next/navigation'
 import {cms} from '@/cms'
@@ -60,52 +57,4 @@ export async function PostView({slug}: {slug: string}) {
       )}
     </article>
   )
-}
-
-export async function generatePostMetadata(slug: string): Promise<Metadata> {
-  const post = await cms.get({url: `/blog/${slug}`, type: Post})
-  if (!post) return {}
-
-  const bodyText = plainText(post.body)
-
-  return {
-    title: post.metadata.title || post.title,
-    description: post.metadata?.description || post.excerpt || bodyText,
-    openGraph: {
-      title: post.metadata.openGraph.title || post.metadata.title || post.title,
-      description:
-        post.metadata.openGraph.description ||
-        post.metadata?.description ||
-        post.excerpt ||
-        bodyText,
-      images: post.metadata?.openGraph.image
-        ? [post.metadata?.openGraph.image.src]
-        : undefined
-    }
-  }
-}
-
-function plainText(value: TextDoc<any> | string | undefined): string {
-  if (!value) return ''
-  if (typeof value === 'string') return value
-
-  if (!Array.isArray(value)) return ''
-  const result = value
-    .reduce((acc, node) => {
-      return acc + textOf(node)
-    }, '')
-    .trim()
-  return result.replace(/ +(?= )/g, '')
-}
-
-function textOf(node: Node): string {
-  if (node._type === 'hardBreak') return '\n'
-  if (Node.isText(node)) {
-    return node.text ? ' ' + node.text : ''
-  } else if (Node.isElement(node) && node.content) {
-    return node.content.reduce((acc, node) => {
-      return acc + textOf(node)
-    }, '')
-  }
-  return ''
 }

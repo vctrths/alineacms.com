@@ -168,7 +168,7 @@
     {
       "_type": "CodeBlock",
       "_id": "3AONCCI4IpWHubFkjlGk0LP4Kaa",
-      "code": "import {cms} from '@/cms'\nimport {SiteFooter, SiteHeader} from '@/entries/settings/SiteLayout'\nimport {SiteLayout} from '@/entries/settings/SiteLayout.schema'\n\nexport default async function RootLayout({children}: {children: React.ReactNode}) {\n  const settings = await cms.get({\n    root: cms.workspaces.main.settings,\n    type: SiteLayout\n  })\n\n  return (\n    <html lang='en'>\n      <body>\n        <SiteHeader settings={settings} />\n        {children}\n        <SiteFooter settings={settings} />\n      </body>\n    </html>\n  )\n}",
+      "code": "import {cms} from '@/cms'\nimport {SiteFooter, SiteHeader} from '@/entries/settings/SiteLayout'\nimport {SiteLayout} from '@/entries/settings/SiteLayout.schema'\n\nexport default async function RootLayout({children}: {children: React.ReactNode}) {\n  const settings = await cms.get({\n    root: cms.workspaces.main.settings,\n    type: SiteLayout\n  })\n\n  return (\n    <html lang='en'>\n      <body>\n        <SiteHeader settings={settings} />\n        {children}\n        <SiteFooter settings={settings} />\n        <cms.previews widget />\n      </body>\n    </html>\n  )\n}",
       "fileName": "app/layout.tsx",
       "language": "tsx",
       "compact": false

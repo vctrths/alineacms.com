@@ -1,6 +1,5 @@
 import {Query} from 'alinea'
 import {Entry} from 'alinea/core/Entry'
-import type {Metadata} from 'next'
 import {notFound} from 'next/navigation'
 import Link from 'next/link'
 import {cms} from '@/cms'
@@ -41,24 +40,4 @@ export async function BlogView() {
       </ul>
     </main>
   )
-}
-
-export async function generateMetadata(): Promise<Metadata> {
-  const page = await cms.get({url: '/blog', type: Blog})
-  if (!page) return {}
-
-  return {
-    title: page.metadata.title || page.title,
-    description: page.metadata?.description || page.intro,
-    openGraph: {
-      title: page.metadata.openGraph.title || page.metadata.title || page.title,
-      description:
-        page.metadata.openGraph.description ||
-        page.metadata?.description ||
-        page.intro,
-      images: page.metadata?.openGraph.image
-        ? [page.metadata?.openGraph.image.src]
-        : undefined
-    }
-  }
 }
