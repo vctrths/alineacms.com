@@ -1,13 +1,12 @@
 {
-  "_id": "3AOc3NR7WVA2TGFY2l5K2TLAwcM",
-  "_type": "SitePage",
+  "_id": "3Cstep5HistoryPage0000000001",
+  "_type": "Page",
   "_index": "a1",
-  "_seeded": "/products.json",
-  "title": "Products",
-  "path": "products",
+  "title": "History",
+  "path": "history",
   "blocks": [
     {
-      "_id": "3AOc3Q16rTMrLSdTxU4OimVRyvR",
+      "_id": "3Cstep5HistoryText000000001",
       "_index": "a0",
       "_type": "TextBlock",
       "body": [
@@ -16,7 +15,7 @@
           "content": [
             {
               "_type": "text",
-              "text": "Products overview page."
+              "text": "History is another child page under About, showing that regular pages can have multiple children."
             }
           ]
         }

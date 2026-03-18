@@ -1,13 +1,12 @@
 {
-  "_id": "3AOc3TUrMZCt5iWPK7i6KR4vsYy",
-  "_type": "SitePage",
-  "_index": "a0",
-  "_seeded": "/products/enterprise.json",
-  "title": "Enterprise",
-  "path": "enterprise",
+  "_id": "3Cstep5AboutPage00000000001",
+  "_type": "Page",
+  "_index": "a1",
+  "title": "About",
+  "path": "about",
   "blocks": [
     {
-      "_id": "3AOc7byTLImG5LxPV2ozb9fWaHo",
+      "_id": "3Cstep5AboutText00000000001",
       "_index": "a0",
       "_type": "TextBlock",
       "body": [
@@ -16,7 +15,7 @@
           "content": [
             {
               "_type": "text",
-              "text": "Enterprise detail page with seeded dummy content."
+              "text": "About is a regular parent page with nested child pages underneath it."
             }
           ]
         }

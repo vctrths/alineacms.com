@@ -1,11 +1,10 @@
 import {Entry} from 'alinea/core/Entry'
 import {notFound} from 'next/navigation'
-import {cms} from '../../cms'
-import {BlogPageView} from '../../entries/blog/BlogPage'
-import {BlogPage} from '../../entries/blog/BlogPage.schema'
-import {BlogPostPageView} from '../../entries/blog/BlogPostPage'
-import {SitePageView} from '../../entries/page/SitePage'
-import {SitePage} from '../../entries/page/SitePage.schema'
+import {cms} from '@/cms'
+import {BlogView} from '@/entries/blog/Blog'
+import {PageView} from '@/entries/page/Page'
+import {Page} from '@/entries/page/Page.schema'
+import {PostView} from '@/entries/post/Post'
 
 interface RouteProps {
   params: Promise<{slug?: Array<string>}>
@@ -27,27 +26,17 @@ export default async function CatchAllPage({params}: RouteProps) {
 
   if (!page) notFound()
 
-  if (page._type === 'BlogPage') {
-    const blogPage = await cms.get({url, type: BlogPage})
-    if (!blogPage) notFound()
-    const posts = await cms.find({
-      parentId: blogPage._id,
-      select: {
-        id: Entry.id,
-        title: Entry.title,
-        url: Entry.url
-      }
-    })
-    return <BlogPageView page={blogPage} posts={posts} />
+  if (page._type === 'Blog') {
+    return <BlogView />
   }
 
-  if (page._type === 'PostPage') {
+  if (page._type === 'Post') {
     const postSlug = slug[slug.length - 1]
     if (!postSlug) notFound()
-    return <BlogPostPageView slug={postSlug} />
+    return <PostView slug={postSlug} />
   }
 
-  const sitePage = await cms.get({url, type: SitePage})
-  if (!sitePage) notFound()
-  return <SitePageView page={sitePage} />
+  const regularPage = await cms.get({url, type: Page})
+  if (!regularPage) notFound()
+  return <PageView page={regularPage} />
 }

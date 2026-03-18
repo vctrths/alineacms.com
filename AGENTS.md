@@ -13,14 +13,6 @@ These defaults apply to any coding/documentation agent working in this repositor
 
 When making changes to the tutorial documentation pages, make sure you keep the tutorial subsites in sync and vica versa.
 
-## Project playbook (required)
-
-For this repository specifically, consult and follow:
-
-- `docs/agents/alinea-agent-playbook.md`
-
-When tasks involve bootstrapping Alinea, generating entries, or writing/updating content metadata, the playbook rules are required.
-
 ## Canonical source resolution (required)
 
 Agents must resolve the `alinea` source with the repository script, not local assumptions:

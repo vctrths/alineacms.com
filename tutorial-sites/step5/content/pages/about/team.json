@@ -1,12 +1,11 @@
 {
-  "_id": "3AOc3TBBg178kowZFBgLt4OzyvV",
+  "_id": "3Cstep5TeamPage000000000001",
   "_type": "Page",
   "_index": "a0",
-  "title": "Home",
-  "path": "",
+  "title": "Team",
   "blocks": [
     {
-      "_id": "3AOc3Pde4GwmGkHYxPurDUunEBF",
+      "_id": "3Cstep5TeamText000000000001",
       "_index": "a0",
       "_type": "TextBlock",
       "body": [
@@ -15,7 +14,16 @@
           "content": [
             {
               "_type": "text",
-              "text": "This homepage is a regular Page entry rendered through the catch-all route in Step 5."
+              "text": "Team is a child page nested under About."
+            }
+          ]
+        },
+        {
+          "_type": "paragraph",
+          "content": [
+            {
+              "_type": "text",
+              "text": "Content editor are free to define new hierarchies (with no limitations on depth or size)."
             }
           ]
         }

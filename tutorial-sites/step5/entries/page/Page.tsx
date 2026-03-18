@@ -1,12 +1,12 @@
-import {Infer} from 'alinea'
-import {GalleryBlockView} from '../../blocks/gallery/GalleryBlock'
-import {ImageBlockView} from '../../blocks/image/ImageBlock'
-import {TextBlockView} from '../../blocks/text/TextBlock'
-import {SitePage} from './SitePage.schema'
+import type {Infer} from 'alinea'
+import {GalleryBlockView} from '@/blocks/gallery/GalleryBlock'
+import {ImageBlockView} from '@/blocks/image/ImageBlock'
+import {TextBlockView} from '@/blocks/text/TextBlock'
+import {Page} from './Page.schema'
 
-type SitePageData = Infer<typeof SitePage>
+type PageData = Infer.Entry<typeof Page>
 
-export function SitePageView({page}: {page: SitePageData}) {
+export function PageView({page}: {page: PageData}) {
   return (
     <main>
       <h1>{page.title}</h1>
