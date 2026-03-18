@@ -47,7 +47,7 @@
               "content": [
                 {
                   "_type": "text",
-                  "text": "Alinea core implementation (for example `src/core/EntryRecord.ts`, `src/core/TextDoc.ts`, `src/core/shape/*`)."
+                  "text": "The Alinea full-llms.txt file holds all documentation (including this playbook section). Use this as primary source of truth."
                 }
               ]
             }
@@ -62,7 +62,42 @@
               "content": [
                 {
                   "_type": "text",
-                  "text": "Alinea README/changelog/docs in the same upstream source tree."
+                  "text": "In case of ambiguity or missing documentation, consult the alinea core source code."
+                }
+              ]
+            },
+            {
+              "_type": "bulletList",
+              "content": [
+                {
+                  "_type": "listItem",
+                  "content": [
+                    {
+                      "_type": "paragraph",
+                      "textAlign": "left",
+                      "content": [
+                        {
+                          "_type": "text",
+                          "text": "Projects using alinea will typically have alinea as a bundled node_modules dependency, which means the (compiled) source code can be accessed directly. "
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "_type": "listItem",
+                  "content": [
+                    {
+                      "_type": "paragraph",
+                      "textAlign": "left",
+                      "content": [
+                        {
+                          "_type": "text",
+                          "text": "In case the source code can not be retrieved, or the compiled code is unclear, consult the source code on https://github.com/alineacms/alinea"
+                        }
+                      ]
+                    }
+                  ]
                 }
               ]
             }
@@ -77,7 +112,22 @@
               "content": [
                 {
                   "_type": "text",
-                  "text": "Concrete JSON fixtures/content in the target project (for example `content/main/**`, `content/demo/**`)."
+                  "text": "Consult schema implementations and concrete JSON fixtures/content in the target project (for example `content/main/**`, `content/demo/**`) to find helpful examples and try to following the same structure when suggesting changes. "
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_type": "listItem",
+          "content": [
+            {
+              "_type": "paragraph",
+              "textAlign": "left",
+              "content": [
+                {
+                  "_type": "text",
+                  "text": "The source code of the alinea documentation website is also publicly available on https://github.com/alineacms/alineacms.com. The documentation website is itself created with Alinea + Next.js and can serve as a useful example."
                 }
               ]
             }
@@ -111,7 +161,7 @@
       "content": [
         {
           "_type": "text",
-          "text": "In existing codebases, first scan the current structure and then align new files and changes to the established coding guidelines and architectural principles."
+          "text": "In existing codebases, first scan the current structure and then align new files and changes to the established coding guidelines and architectural principles. "
         }
       ]
     },
@@ -539,8 +589,8 @@
     "title": "",
     "description": "",
     "openGraph": {
-      "title": "",
       "image": {},
+      "title": "",
       "description": ""
     }
   }
