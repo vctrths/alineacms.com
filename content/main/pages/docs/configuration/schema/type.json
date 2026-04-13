@@ -29,7 +29,7 @@
     {
       "_type": "CodeBlock",
       "_id": "267QyzM4851hQU1DihfoV3fSIFg",
-      "code": "import {Config, Field} from 'alinea'\n\nConfig.type('Blog', {\n  contains: ['BlogPost'],\n  fields: {\n    title: Field.text('Title', {width: 0.5}),\n    path: Field.path('Path', {width: 0.5})\n  }\n})",
+      "code": "import {Config, Field} from 'alinea'\n\nConfig.type('Blog', {\n  contains: ['BlogPost'],\n  fields: {\n    title: Field.text('Title', {required: true, width: 0.5}),\n    path: Field.path('Path', {required: true, width: 0.5})\n  }\n})",
       "fileName": "",
       "language": "",
       "compact": false
@@ -217,7 +217,7 @@
             {
               "_type": "link",
               "_id": "2bMDWBN5BaC5E3OxgHCQZFHUp47",
-              "_entry": "28hxVNf3JO9raYJ1HVQ6XgDX9pW",
+              "_entry": "3AZCsyar65l8ytkp44ZL2C4aCG2",
               "_link": "entry"
             }
           ]
